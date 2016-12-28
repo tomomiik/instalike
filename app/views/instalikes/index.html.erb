@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+<h1>Posted Pictures</h1>
+
+<% @instalikes.each do |instalike| %>
+  <p>title:<%= instalike.title %></p>
+  <p>content:<%= instalike.content %></p>
+  <%= link_to "Edit", edit_instalike_path(instalike.id) %>
+  <%= link_to "Delete", instalike_path(instalike.id), method: :delete, data: { confirm: '本当に編集しても良いですか'} %>
+<% end %>
+<br>
+<%= link_to "Post a Picture", new_instalike_path %>
+ </div>
+</div>

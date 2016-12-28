@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Instalike</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header>
+    <ul>
+      <li class="icon"><%= link_to image_tag('header.png', { :size => '25x25', :alt => 'insta'}), root_path %></li>
+      <li><%= link_to "POST", new_instalike_path %></li>
+      <li><%= link_to "PICTURES", instalikes_path %></li>
+      <li><a href="#">LOGIN</a></li>
+      <li><a href="#">SIGHNUP</a></li>
+    </ul>
+  </header>
+
+<%= yield %>
+
+  <footer>
+    <p>©Copyright INSTUM Corp.</p>
+  </footer>
+</body>
+</html>

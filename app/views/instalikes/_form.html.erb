@@ -1,0 +1,23 @@
+<%= form_for(@instalike, url: choose_new_or_edit) do |f| %>
+ <% if @instalike.errors.any? %>
+    <div id="error_explanation">
+     <h2><%= @instalike.errors.count %>件のエラーがあります。</h2>
+     <ul>
+     <% @blog.errors.full_messages.each do |msg| %>
+     <li><%= msg %></li>
+     <% end %>
+     </ul>
+    </div>
+ <% end %>
+
+ <%= f.label :title %>
+ <%= f.text_field :title, class: 'form_control' %>
+ <br>
+ <%= f.label :content %>
+ <%= f.text_field :content, class: 'form_control' %>
+ <br>
+ <br>
+ <%= f.submit 'POST!', class: 'btn btn-primary btn-block' %>
+<% end %>
+ <br>
+<%= link_to "Back To Pictures List", instalikes_path %>
