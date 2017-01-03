@@ -1,4 +1,5 @@
 class InstalikesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_instum, only: [:edit, :update, :destroy]
   def index
     @instalikes = Instum.all
@@ -14,8 +15,10 @@ class InstalikesController < ApplicationController
 
   def create
     @instalike = Instum.new(instums_params)
+    @instalike.user_id = current_user.id
    if @instalike.save
     redirect_to instalikes_path, notice: "投稿が完了しました"
+    NoticeMailer.sendmail_insta(@instalike).deliver
    else
      render 'new'
    end

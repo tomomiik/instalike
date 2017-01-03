@@ -23,6 +23,13 @@ gem 'font-awesome-rails'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'jquery-turbolinks'
 gem 'rails_12factor', group: :production
+gem 'devise'
+gem 'rails_admin'
+gem 'cancan'
+
+group :development do
+  gem 'letter_opener_web'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
