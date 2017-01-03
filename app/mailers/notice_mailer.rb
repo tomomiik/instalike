@@ -7,7 +7,7 @@ class NoticeMailer < ApplicationMailer
   #
   def sendmail_insta(instalike)
     @instalike = instalike
-    mail to: "tomomiik0210@gmail.com"
-    subject: '写真が投稿されました'
+    mail to: "tomomiik0210@gmail.com",
+         subject: '【Insta】写真が投稿されました'
   end
 end
