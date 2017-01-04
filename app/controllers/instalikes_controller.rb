@@ -3,6 +3,7 @@ class InstalikesController < ApplicationController
   before_action :set_instum, only: [:edit, :update, :destroy]
   def index
     @instalikes = Instum.all
+    raise
   end
 
   def new
