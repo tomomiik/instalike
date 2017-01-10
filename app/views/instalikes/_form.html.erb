@@ -1,6 +1,10 @@
 <%= form_for(@instalike, url: choose_new_or_edit) do |f| %>
 <%= f.error_messages! %>
-
+<div class="imageupload">
+ <%= f.label :image %>
+ <%= f.file_field :image %>
+</div>
+ <br>
  <%= f.label :title %>
  <%= f.text_field :title, class: 'form_control' %>
  <br>

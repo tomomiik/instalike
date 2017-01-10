@@ -14,3 +14,38 @@ input[type="submit"].btn-block{
 .container{
   padding-bottom: 85px;
 }
+
+.who img{
+  max-width: 30px;
+  height: auto;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+
+.who {
+  font-weight: bold;
+  text-align: left;
+  padding: 10px 10px 0 10px;
+}
+.oowaku {
+  padding-bottom: 50px;
+}
+
+.waku {
+  border:solid 1px #d3d3d3;
+}
+.user{
+  text-align: left;
+  padding-left: 10px;
+}
+
+.imageupload {
+  text-align: center;
+}
+
+#username {
+  font-weight: bold;
+  padding-right: 5px;
+}

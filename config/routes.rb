@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
+
+  devise_for :users, controllers: {
+    registrations: "users/registrations",
+    omniauth_callbacks: "users/omniauth_callbacks"
+  }
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users
   resources :instalikes, only: [:index, :new, :create, :edit, :update, :destroy] do
   end
 
@@ -9,4 +14,6 @@ Rails.application.routes.draw do
   end
 
   root 'top#index'
+
+
 end

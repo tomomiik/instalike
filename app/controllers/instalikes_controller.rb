@@ -3,7 +3,6 @@ class InstalikesController < ApplicationController
   before_action :set_instum, only: [:edit, :update, :destroy]
   def index
     @instalikes = Instum.all
-    raise
   end
 
   def new
@@ -43,7 +42,7 @@ class InstalikesController < ApplicationController
 
   private
   def instums_params
-    params.require(:instum).permit(:title, :content)
+    params.require(:instum).permit(:title, :content, :image)
   end
   def set_instum
     @instalike = Instum.find(params[:id])

@@ -3,12 +3,19 @@
 <h1>Posted Pictures</h1>
 
 <% @instalikes.each do |instalike| %>
-  <p>title:<%= instalike.title %></p>
-  <p>content:<%= instalike.content %></p>
-  <%= link_to "Edit", edit_instalike_path(instalike.id) %>
-  <%= link_to "Delete", instalike_path(instalike.id), method: :delete, data: { confirm: '本当に編集しても良いですか'} %>
+<div class="oowaku">
+<div class="waku">
+<div class="who">
+  <p><%= image_tag instalike.user.avatar %><%= instalike.user.name %></p>
+</div>
+  <p><%= image_tag instalike.image %></p>
+  <p class="user"><span id="username"><%= instalike.user.name %></span><%= instalike.content %></p>
+</div>
+  <%= link_to "Edit", edit_instalike_path(instalike.id), class: 'btn btn-default btn-sm', :style=>"margin:5px;" %>
+  <%= link_to "Delete", instalike_path(instalike.id), method: :delete, class: 'btn btn-default btn-sm', :style=>"margin:5px;", data: { confirm: '本当に編集しても良いですか'} %>
+</div>
 <% end %>
 <br>
-<%= link_to "Post a Picture", new_instalike_path %>
+<%= link_to "Post a Picture", new_instalike_path, class: 'btn btn-primary btn-lg btn-block' %>
  </div>
 </div>
